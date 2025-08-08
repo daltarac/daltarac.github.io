@@ -199,34 +199,32 @@
         /* Font Awesome for icons */
         @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
     </style>
+    <script type='text/javascript'>
+        function initEmbeddedMessaging() {
+            try {
+                embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+                window.addEventListener("onEmbeddedMessagingReady", e => {
+                    console.log("before setHiddenPrechatFields");
+                      embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({ "CustomerId" : "99999" });
+                    console.log("after setHiddenPrechatFields");
+                });
+                
+                embeddedservice_bootstrap.init(
+                    '00DWs00000BqtID',
+                    'GitHub_Deployment',
+                    'https://storm-cfafa68dba947d.my.site.com/ESWGitHubDeployment1748616207924',
+                    {
+                        scrt2URL: 'https://storm-cfafa68dba947d.my.salesforce-scrt.com'
+                    }
+                );
+            } catch (err) {
+                console.error('Error loading Embedded Messaging: ', err);
+            }
+        };
+    </script>
 </head>
 <body>
-        <script type='text/javascript'>
-        	function initEmbeddedMessaging() {
-        		try {
-        			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-
-                    window.addEventListener("onEmbeddedMessagingReady", e => {
-                        console.log("before setHiddenPrechatFields");
-                          embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({ "CustomerId" : "99999" });
-                        console.log("after setHiddenPrechatFields");
-                    });
-                    
-        			embeddedservice_bootstrap.init(
-        				'00DWs00000BqtID',
-        				'GitHub_Deployment',
-        				'https://storm-cfafa68dba947d.my.site.com/ESWGitHubDeployment1748616207924',
-        				{
-        					scrt2URL: 'https://storm-cfafa68dba947d.my.salesforce-scrt.com'
-        				}
-        			);
-        		} catch (err) {
-        			console.error('Error loading Embedded Messaging: ', err);
-        		}
-        	};
-        </script>
-        <script type='text/javascript' src='https://storm-cfafa68dba947d.my.site.com/ESWGitHubDeployment1748616207924/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
-    
     <header>
         <div class="container">
             <div id="branding">
@@ -322,6 +320,6 @@
             <p>&copy; 2025 PSC Express Shipping. All Rights Reserved.</p>
         </div>
     </footer>
-
+    <script type='text/javascript' src='https://storm-cfafa68dba947d.my.site.com/ESWGitHubDeployment1748616207924/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 </body>
 </html>
