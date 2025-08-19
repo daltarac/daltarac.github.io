@@ -27,6 +27,23 @@
 <html>
     <body>
         <script type='text/javascript'>
+			function initEmbeddedMessaging2() {
+				try {
+					embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+		
+					embeddedservice_bootstrap.init(
+						'00DWs00000BqtID',
+						'EB_Messaging_Channel',
+						'https://storm-cfafa68dba947d.my.site.com/ESWEBMessagingChannel1755622674605',
+						{
+							scrt2URL: 'https://storm-cfafa68dba947d.my.salesforce-scrt.com'
+						}
+					);
+				} catch (err) {
+					console.error('Error loading Embedded Messaging: ', err);
+				}
+			};
+			
         	function initEmbeddedMessaging() {
         		try {
         			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
@@ -51,5 +68,6 @@
         	};
         </script>
         <script type='text/javascript' src='https://storm-cfafa68dba947d.my.site.com/ESWGitHubDeployment1748616207924/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+		<script type='text/javascript' src='https://storm-cfafa68dba947d.my.site.com/ESWEBMessagingChannel1755622674605/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging2()'></script>
     </body>
 </html>
