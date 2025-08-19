@@ -30,7 +30,16 @@
 			function initEmbeddedMessaging() {
 				try {
 					embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
-		
+
+					embeddedservice_bootstrap.init(
+						'00DWs00000BqtID',
+						'EB_Messaging_Channel',
+						'https://storm-cfafa68dba947d.my.site.com/ESWEBMessagingChannel1755622674605',
+						{
+							scrt2URL: 'https://storm-cfafa68dba947d.my.salesforce-scrt.com'
+						}
+					);
+					
 					embeddedservice_bootstrap.init(
 						'00DWs00000BqtID',
 						'GitHub_Deployment',
